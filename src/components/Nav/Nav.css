@@ -1,0 +1,50 @@
+@import url('/src/App.css');
+
+nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    height: clamp(100vh, 100vh, 100vh);
+    width: clamp(300px, 300px, 300px);
+
+    background-color: var(--accent-color);
+}
+
+.nav-logo {
+    width: clamp(115px, 115px, 200px);
+    margin: 5em auto;
+}
+
+.nav-options {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+    margin: 0 4em;
+
+    list-style: none;
+}
+.nav-options a {
+    text-decoration: none;
+    color: var(--neutral-light-color);
+    font-size: 18px;
+}
+.nav-options--desconectar {
+    color: var(--desconectar-color) !important;
+}
+
+.nav-options-container {
+    display: flex;
+    gap: 1em;
+}
+
+.nav-box {
+    width: clamp(190px, 190px, 190px);
+    height: clamp(54px, 54px, 54px);
+
+    background-color: var(--nav-box-color);
+    border-radius: 6px;
+}

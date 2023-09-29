@@ -1,0 +1,49 @@
+@import url('/src/App.css');
+
+main {
+    margin: 56px 256px 0 480px;
+
+    color: var(--title-color);
+}
+
+.main-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-options {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+.main-user {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+.main-user .icon {
+    width: clamp(40px, 40px, 40px);
+    height: clamp(40px, 40px, 40px);
+}
+
+.icon--notification {
+    position: relative;
+}
+.icon--notification::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    width: clamp(10px, 10px, 10px);
+    height: clamp(10px, 10px, 10px);
+
+    background-color: var(--notification-color);
+}

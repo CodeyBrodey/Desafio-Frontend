@@ -1,0 +1,35 @@
+:root {
+  /* cores */
+  --accent-color: #03363D;
+  --neutral-light-color: #FFF;
+  --background-color: #F3F4F8;
+  --background2-color: rgba(3, 54, 61, 0.06);
+  --nav-box-color: #E453530F;
+  --title-color: #272727;
+  --desconectar-color: #CC4141;
+  --notification-color: #FF0000;
+  --card-title-color: rgba(0, 0, 0, 0.45);
+  --card-text-color: rgba(0, 0, 0, 0.85);
+
+  /* font */
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: var(--font-regular);
+  background-color: var(--background-color);
+}
+
+.icon {
+  width: clamp(24px, 24px, 24px);
+  height: clamp(24px, 24px, 24px);
+}
