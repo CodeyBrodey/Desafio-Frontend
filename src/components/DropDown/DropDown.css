@@ -1,0 +1,71 @@
+@import url("/src/App.css");
+
+.DropDown-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 1.5em;
+}
+
+.DropDown-button {
+    padding: 1.25em 1.5em 1.75em 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+
+    border: none;
+    cursor: pointer;
+    background-color: var(--neutral-light-color);
+}
+
+.DropDown-title {
+    font-size: 14px;
+    color: var(--DropDown-title-color);
+}
+
+.DropDown-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+
+    color: var(--DropDown-text-color);
+    font-size: 30px;
+    font-weight: var(--font-regular);
+}
+
+.DropDown-pessoas {
+    box-shadow: 5px 5px var(--DropDown-pessoas-color);
+}
+.DropDown-planetas {
+    box-shadow: 5px 5px var(--DropDown-planetas-color);
+}
+.DropDown-especies {
+    box-shadow: 5px 5px var(--DropDown-especies-color);
+}
+.DropDown-naves {
+    box-shadow: 5px 5px var(--DropDown-naves-color);
+}
+
+.not-active {
+    box-shadow: none;
+}
+
+.DropDown-active {
+    display: none;
+    margin: 2em 0;
+    padding: 0.5em 2em;
+
+    color: var(--DropDown-title-color);
+    font-size: 16px;
+    font-weight: var(--font-regular);
+    background-color: var(--neutral-light-color);
+}
+
+.DropDown-active-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.DropDown-active-top img {
+    width: clamp( 208px, 208px, 208px);
+}

@@ -3,7 +3,7 @@ import "./Filmes.css"
 function Filmes() {
 
     return (
-        <section className="filmes">
+        <div className="filmes">
             <h2>Filmes</h2>
             <ul>
                 <li>
@@ -17,7 +17,7 @@ function Filmes() {
                 </li>
 
                 <li>
-                    <span className="title">Episódio VI: O Retorn de Jedi</span>
+                    <span className="title">Episódio VI: O Retorno de Jedi</span>
                     <span className="date">25/05/1983</span>
                 </li>
 
@@ -36,7 +36,7 @@ function Filmes() {
                     <span className="date">19/05/2005</span>
                 </li>
             </ul>
-        </section>
+        </div>
     )
 }
 
