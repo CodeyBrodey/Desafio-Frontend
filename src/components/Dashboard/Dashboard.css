@@ -17,6 +17,7 @@ main {
     gap: 1em;
     align-items: center;
     justify-content: center;
+    margin: 0 2.5em 0 0;
 }
 
 h1 {
@@ -35,15 +36,17 @@ h1 {
 
 .icon--notification {
     position: relative;
+    display: flex;
+    justify-content: center;
 }
-.icon--notification::after{
+.icon--notification::before {
     content: '';
     position: absolute;
     top: 0;
-    right: 0;
-    padding: 1em;
-    width: clamp(10px, 10px, 10px);
-    height: clamp(10px, 10px, 10px);
+    right: -3px;
+    width: clamp(6px, 6px, 6px);
+    height: clamp(6px, 6px, 6px);
 
+    border-radius: 6px;
     background-color: var(--notification-color);
 }
