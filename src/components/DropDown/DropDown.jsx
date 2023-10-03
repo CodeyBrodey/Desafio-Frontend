@@ -65,7 +65,7 @@ function DropDown(props) {
                 <button className="DropDown-button DropDown-especies not-active" onClick={ handleClick }>
                     <p className="DropDown-title">Espécies</p>
                     <div className="DropDown-info">
-                        <img src={ especiesImage } alt="" />
+                        <img className="especies-image" src={ especiesImage } alt="" />
                         <span>{ props.especiesData.count }</span>
                     </div>
                 </button>
@@ -73,7 +73,7 @@ function DropDown(props) {
                 <button className="DropDown-button DropDown-naves not-active" onClick={ handleClick }>
                     <p className="DropDown-title">Naves</p>
                     <div className="DropDown-info">
-                        <img src={ navesImage } alt="" />
+                        <img className="naves-image" src={ navesImage } alt="" />
                         <span>{ props.navesData.count }</span>
                     </div>
                 </button>

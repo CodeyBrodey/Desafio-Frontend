@@ -32,6 +32,18 @@
     font-weight: var(--font-regular);
 }
 
+.DropDown-info img {
+    width: clamp(35px, 35px, 35px);
+}
+
+.especies-image {
+    width: clamp(33px, 33px, 33px) !important;
+}
+
+.naves-image {
+    width: clamp(27px, 27px, 27px) !important;
+}
+
 .DropDown-pessoas {
     box-shadow: 5px 5px var(--DropDown-pessoas-color);
 }
