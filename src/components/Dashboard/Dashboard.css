@@ -2,7 +2,7 @@
 
 main {
     margin: 56px 256px 0 480px;
-    height: clamp(150vh, 150vh, 100%);
+    min-height: 1000px;
 
     color: var(--title-color);
 }
