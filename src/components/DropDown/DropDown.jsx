@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import "./DropDown.css"
 import TableInfo from "../TableInfo/TableInfo"
 import PropTypes from 'prop-types'
@@ -10,6 +10,7 @@ import searchBarImage from '../images/search-bar.png'
 
 
 function DropDown(props) {
+    /* PropTypes */
     DropDown.propTypes = {
         pessoasData: PropTypes.shape({
             count: PropTypes.number.isRequired,
@@ -31,16 +32,19 @@ function DropDown(props) {
     const [ infoTitle, setInfoTitle ] = useState(null)
     const DropDownActive = document.querySelector('.DropDown-active')
     let myData = props.pessoasData.results
+
     const DropDownTableInfo = [
        {Pessoas: ['Nome', 'Altura', 'Ano de Nascimento', 'Criado em', 'Editado em']},
        {Planetas: ['Nome', 'População', 'Clima', 'Criado em', 'Editado em']},
        {Espécies: ['Nome', 'Classificação', 'Designação', 'Criado em', 'Editado em']},
        {Naves: ['Nome', 'Modelo', 'Fabricante', 'Velocidade', 'Valor em créditos']}
     ]
-    infoTitle ? null : null
-    const myKey = Object.keys(DropDownTableInfo[0])
-    console.log(myKey.toString())
+    let myKey
+    for (let i = 0; i < DropDownTableInfo.length; i++) {
+        myKey = Object.keys(DropDownTableInfo[i])
+    }
     
+    console.log(props.planetasData)
     
 
     function handleClick(event) {
@@ -55,7 +59,6 @@ function DropDown(props) {
         setInfoTitle(target.querySelector('p').textContent)
         console.log(DropDownActive.style.display = 'block')
     }
-
 
     
     return (

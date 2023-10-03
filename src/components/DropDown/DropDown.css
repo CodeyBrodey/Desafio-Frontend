@@ -118,9 +118,8 @@ hr {
 @media(min-width: 600px) {
     .DropDown-container {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
         column-gap: 1.5em;
-        gap: 0;
+        gap: 2em;
     }
 
     .DropDown-info {
@@ -159,5 +158,11 @@ hr {
         margin: 1em 50px 0 50px;
 
         font-size: 14px;
+    }
+}
+
+@media(min-width: 1300px) {
+    .DropDown-container {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
