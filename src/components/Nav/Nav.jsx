@@ -8,21 +8,21 @@ function Nav() {
             <ul className="nav-options">
                 <li>
                     <a className='nav-options-container' href="">
-                        <img className="icon" src="../Desafio-Frontend/src/images/dashboard.png" alt="" />
+                        <img className="icon" src="../src/images/dashboard.png" alt="" />
                         Dashboard
                     </a>
                 </li>
 
                 <li>
                     <a className='nav-options-container' href="">
-                        <img className="icon" src="/src/images/ajustes.png" alt="" />
+                        <img className="icon" src="./src/images/ajustes.png" alt="" />
                         Ajustes
                     </a>
                 </li>
 
                 <li>
                     <a className='nav-options-container nav-options--desconectar' href="">
-                        <img className="icon" src="/src/images/desconectar.png" alt="" />
+                        <img className="icon" src="../desconectar.png" alt="" />
                         Desconectar
                     </a>
                 </li>
