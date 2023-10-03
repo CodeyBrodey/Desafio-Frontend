@@ -45,6 +45,10 @@
     width: clamp(22px, 22px, 22px) !important;
 }
 
+.loading-image {
+    animation: rotation 2s infinite linear;
+} 
+
 .DropDown-pessoas {
     box-shadow: 5px 5px var(--DropDown-pessoas-color);
 }
@@ -113,6 +117,16 @@ hr {
 .DropDown-table-hr {
     margin: 0 50px;
 }
+
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
 
 
 @media(min-width: 600px) {

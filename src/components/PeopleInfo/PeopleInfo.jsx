@@ -1,10 +1,10 @@
-import './TableInfo.css'
+import './PeopleInfo.css'
 
-function TableInfo(props) {
+function PeopleInfo(props) {
 
     return (
         <>
-            <div className='TableInfo-entries'>
+            <div className='PeopleInfo-entries'>
                 <span>{props.names}</span>
                 <span>{props.height}</span>
                 <span>{props.birthyear}</span>
@@ -16,4 +16,4 @@ function TableInfo(props) {
     )
 }
 
-export default TableInfo
+export default PeopleInfo

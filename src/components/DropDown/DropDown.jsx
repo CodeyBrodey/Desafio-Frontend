@@ -1,12 +1,14 @@
 import { useState } from "react"
 import "./DropDown.css"
-import TableInfo from "../TableInfo/TableInfo"
+import PeopleInfo from "../PeopleInfo/PeopleInfo"
+import PlanetInfo from "../PlanetInfo/PlanetInfo"
 import PropTypes from 'prop-types'
 import pessoasImage from '../images/pessoas.png'
 import planetasImage from '../images/planetas.png'
 import especiesImage from '../images/especies.png'
 import navesImage from '../images/naves.png'
 import searchBarImage from '../images/search-bar.png'
+import loadingImage from '../images/loading.png'
 
 
 function DropDown(props) {
@@ -31,7 +33,8 @@ function DropDown(props) {
     const DropDownButtons = document.querySelectorAll('.DropDown-button')
     const [ infoTitle, setInfoTitle ] = useState(null)
     const DropDownActive = document.querySelector('.DropDown-active')
-    let myData = props.pessoasData.results
+    let myPeopleData = props.pessoasData.results
+    let myPlanetData = props.planetasData.results
 
     const DropDownTableInfo = [
        {Pessoas: ['Nome', 'Altura', 'Ano de Nascimento', 'Criado em', 'Editado em']},
@@ -39,12 +42,8 @@ function DropDown(props) {
        {Espécies: ['Nome', 'Classificação', 'Designação', 'Criado em', 'Editado em']},
        {Naves: ['Nome', 'Modelo', 'Fabricante', 'Velocidade', 'Valor em créditos']}
     ]
-    let myKey
-    for (let i = 0; i < DropDownTableInfo.length; i++) {
-        myKey = Object.keys(DropDownTableInfo[i])
-    }
     
-    console.log(props.planetasData)
+    console.log(myPlanetData)
     
 
     function handleClick(event) {
@@ -63,12 +62,12 @@ function DropDown(props) {
     
     return (
         <div>
-            <div className="DropDown-container">
+            <div className="DropDown-container"> 
                 <button className="DropDown-button DropDown-pessoas not-active" onClick={ handleClick }>
                     <p className="DropDown-title">Pessoas</p>
                     <div className="DropDown-info">
                         <img src={ pessoasImage } alt="" />
-                        <span>{ props.pessoasData.count ? props.pessoasData.count : 'carregando'}</span>
+                        <span>{ props.pessoasData.count ? props.pessoasData.count : <img className="loading-image" src={loadingImage}></img>}</span>
                     </div>
                 </button>
 
@@ -76,7 +75,7 @@ function DropDown(props) {
                     <p className="DropDown-title">Planetas</p>
                     <div className="DropDown-info">
                         <img src={ planetasImage } alt="" />
-                        <span>{ props.planetasData.count }</span>
+                        <span>{ props.planetasData.count ? props.planetasData.count : <img className="loading-image" src={loadingImage}></img>}</span>
                     </div>
                 </button>
 
@@ -84,7 +83,7 @@ function DropDown(props) {
                     <p className="DropDown-title">Espécies</p>
                     <div className="DropDown-info">
                         <img className="especies-image" src={ especiesImage } alt="" />
-                        <span>{ props.especiesData.count }</span>
+                        <span>{ props.especiesData.count ? props.especiesData.count : <img className="loading-image" src={loadingImage}></img>}</span>
                     </div>
                 </button>
 
@@ -92,7 +91,7 @@ function DropDown(props) {
                     <p className="DropDown-title">Naves</p>
                     <div className="DropDown-info">
                         <img className="naves-image" src={ navesImage } alt="" />
-                        <span>{ props.navesData.count }</span>
+                        <span>{ props.navesData.count ? props.navesData.count : <img className="loading-image" src={loadingImage}></img>}</span>
                     </div>
                 </button>
             </div>
@@ -129,15 +128,45 @@ function DropDown(props) {
                 <hr className="DropDown-table-hr"/>
                 <div className="DropDown-table-results">
                     <div>
-                        {myData === undefined ? console.log('not nice') : 
+                        {myPeopleData !== undefined && infoTitle === 'Pessoas' ? 
+                        myPeopleData.filter((value) => {
+                            if(myPeopleData !== undefined) return value
+                            return console.log('not working')
+                        })
+                        .map((item) => ( 
+                            <PeopleInfo key={ item.name } names={item.name} height={item.height} birthyear={item.birth_year} created={item.created} edited={item.edited}/>
+                        )) : console.log('not nice')
+                        } 
+
+                        {myPlanetData !== undefined && infoTitle === 'Pessoas' ? 
+                        myPlanetData.filter((value) => {
+                            if(myPlanetData !== undefined) return value
+                            return console.log('not working')
+                        })
+                        .map((item) => ( 
+                            <PlanetInfo key={ item.name } names={item.name} population={item.population} climate={item.climate} created={item.created} edited={item.edited}/>
+                        )) : console.log('not nice')
+                        } 
+                        {/*
+                        {myData !== undefined && infoTitle === 'Pessoas' ? 
                         myData.filter((value) => {
                             if(myData !== undefined) return value
                             return console.log('not working')
                         })
                         .map((item) => ( 
                             <TableInfo key={ item.name } names={item.name} height={item.height} birthyear={item.birth_year} created={item.created} edited={item.edited}/>
-                        ))
+                        )) : console.log('not nice')
                         } 
+
+                        {myData !== undefined && infoTitle === 'Pessoas' ? 
+                        myData.filter((value) => {
+                            if(myData !== undefined) return value
+                            return console.log('not working')
+                        })
+                        .map((item) => ( 
+                            <TableInfo key={ item.name } names={item.name} height={item.height} birthyear={item.birth_year} created={item.created} edited={item.edited}/>
+                        )) : console.log('not nice')
+                        }  */}
                     </div>
                 </div>
             </div>
