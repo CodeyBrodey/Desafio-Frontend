@@ -1,7 +1,7 @@
 @import url('/src/App.css');
 
 main {
-    margin: 56px 256px 0 480px;
+    margin: 2em;
     min-height: 1000px;
 
     color: var(--title-color);
@@ -18,11 +18,10 @@ main {
     gap: 1em;
     align-items: center;
     justify-content: center;
-    margin: 0 2.5em 0 0;
 }
 
 h1 {
-    font-size: 28px;
+    font-size: 20px;
 }
 
 .main-user {
@@ -31,8 +30,8 @@ h1 {
     font-size: 14px;
 }
 .main-user .icon {
-    width: clamp(40px, 40px, 40px);
-    height: clamp(40px, 40px, 40px);
+    width: clamp(30px, 30px, 30px);
+    height: clamp(30px, 30px, 30px);
 }
 
 .icon--notification {
@@ -50,4 +49,24 @@ h1 {
 
     border-radius: 6px;
     background-color: var(--notification-color);
+}
+
+
+@media(min-width:600px) {
+    main {
+        margin: 56px 256px 0 480px;
+    }
+
+    .main-options {
+        margin: 0 2.5em 0 0;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .main-user .icon {
+        width: clamp(40px, 40px, 40px);
+        height: clamp(40px, 40px, 40px);
+    }
 }

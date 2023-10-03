@@ -2,8 +2,9 @@
 
 .DropDown-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     column-gap: 1.5em;
+    gap: 1em;
 }
 
 .DropDown-button {
@@ -28,20 +29,20 @@
     gap: 0.5em;
 
     color: var(--DropDown-text-color);
-    font-size: 30px;
+    font-size: 24px;
     font-weight: var(--font-regular);
 }
 
 .DropDown-info img {
-    width: clamp(35px, 35px, 35px);
+    width: clamp(30px, 30px, 30px);
 }
 
 .especies-image {
-    width: clamp(33px, 33px, 33px) !important;
+    width: clamp(28px, 28px, 28px) !important;
 }
 
 .naves-image {
-    width: clamp(27px, 27px, 27px) !important;
+    width: clamp(22px, 22px, 22px) !important;
 }
 
 .DropDown-pessoas {
@@ -67,20 +68,22 @@
     padding: 0.5em 0;
 
     color: var(--DropDown-info-title-color);
-    font-size: 16px;
+    font-size: 18px;
     font-weight: var(--font-regular);
     background-color: var(--neutral-light-color);
 }
 
 .DropDown-active-top {
-    padding: 0 2em;
+    padding: 1em 2em;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 1em;
 }
 
 .DropDown-active-top img {
-    width: clamp( 208px, 208px, 208px);
+    width: clamp( 150px, 150px, 150px);
 }
 
 hr {
@@ -97,12 +100,12 @@ hr {
     grid-template-columns: repeat(5, 1fr);
     column-gap: 1em;
 
-    margin: 1em 50px 0 50px;
+    margin: 1em 25px 0 25px;
     padding: 1em 0;
 
     background-color: var(--DropDown-info-title-background-color);
     color: var(--DropDown-info-title-color);
-    font-size: 14px;
+    font-size: 12px;
     font-weight: var(--font-medium);
 }
 
@@ -112,3 +115,49 @@ hr {
 }
 
 
+@media(min-width: 600px) {
+    .DropDown-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 1.5em;
+        gap: 0;
+    }
+
+    .DropDown-info {
+        font-size: 30px;
+    }
+
+    .DropDown-info img {
+        width: clamp(35px, 35px, 35px);
+    }
+    
+    .especies-image {
+        width: clamp(33px, 33px, 33px) !important;
+    }
+    
+    .naves-image {
+        width: clamp(27px, 27px, 27px) !important;
+    }
+
+    .DropDown-active {
+        font-size: 16px;
+    }
+
+    .DropDown-active-top {
+        padding: 0 2em;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0;
+    }
+
+    .DropDown-active-top img {
+        width: clamp( 208px, 208px, 208px);
+    }
+
+    .DropDown-table {
+        margin: 1em 50px 0 50px;
+
+        font-size: 14px;
+    }
+}
