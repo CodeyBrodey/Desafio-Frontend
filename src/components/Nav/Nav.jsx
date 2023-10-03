@@ -8,7 +8,7 @@ function Nav() {
             <ul className="nav-options">
                 <li>
                     <a className='nav-options-container' href="">
-                        <img className="icon" src="/src/images/dashboard.png" alt="" />
+                        <img className="icon" src="../Desafio-Frontend/src/images/dashboard.png" alt="" />
                         Dashboard
                     </a>
                 </li>
