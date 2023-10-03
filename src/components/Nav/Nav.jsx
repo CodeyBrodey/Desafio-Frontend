@@ -1,5 +1,4 @@
 import './Nav.css'
-import ajustesImg from '../../images/ajustes.png'
 
 function Nav() {
 
@@ -9,14 +8,14 @@ function Nav() {
             <ul className="nav-options">
                 <li>
                     <a className='nav-options-container' href="">
-                        <img className="icon" src={ dashboardImg } alt="" />
+                        <img className="icon" src="/src/images/dashboard.png" alt="" />
                         Dashboard
                     </a>
                 </li>
 
                 <li>
                     <a className='nav-options-container' href="">
-                        <img className="icon" src={ajustesImg} alt="" />
+                        <img className="icon" src="/src/images/ajustes.png" alt="" />
                         Ajustes
                     </a>
                 </li>
