@@ -31,9 +31,16 @@ function DropDown(props) {
     const [ infoTitle, setInfoTitle ] = useState(null)
     const DropDownActive = document.querySelector('.DropDown-active')
     let myData = props.pessoasData.results
-    useEffect(() => {
-        myData
-    }, [myData])
+    const DropDownTableInfo = [
+       {Pessoas: ['Nome', 'Altura', 'Ano de Nascimento', 'Criado em', 'Editado em']},
+       {Planetas: ['Nome', 'População', 'Clima', 'Criado em', 'Editado em']},
+       {Espécies: ['Nome', 'Classificação', 'Designação', 'Criado em', 'Editado em']},
+       {Naves: ['Nome', 'Modelo', 'Fabricante', 'Velocidade', 'Valor em créditos']}
+    ]
+    infoTitle ? null : null
+    const myKey = Object.keys(DropDownTableInfo[0])
+    console.log(myKey.toString())
+    
     
 
     function handleClick(event) {
@@ -58,7 +65,7 @@ function DropDown(props) {
                     <p className="DropDown-title">Pessoas</p>
                     <div className="DropDown-info">
                         <img src={ pessoasImage } alt="" />
-                        <span>{ props.pessoasData.count }</span>
+                        <span>{ props.pessoasData.count ? props.pessoasData.count : 'carregando'}</span>
                     </div>
                 </button>
 

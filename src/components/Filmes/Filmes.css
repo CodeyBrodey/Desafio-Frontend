@@ -36,3 +36,9 @@
     font-size: 18px;
     font-weight: var(--font-semibold);
 }
+
+@media(max-width: 1300px) {
+    .filmes ul {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
