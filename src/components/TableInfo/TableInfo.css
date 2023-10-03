@@ -1,0 +1,13 @@
+@import url('/src/App.css');
+
+.TableInfo-entries {
+    margin: 0 50px;
+    padding: 1em 0;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 1em;
+
+    font-weight: var(--font-regular);
+    font-size: 14px;
+}

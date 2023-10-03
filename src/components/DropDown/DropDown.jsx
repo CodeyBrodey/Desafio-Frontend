@@ -1,5 +1,6 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import "./DropDown.css"
+import TableInfo from "../TableInfo/TableInfo"
 import PropTypes from 'prop-types'
 import pessoasImage from '../images/pessoas.png'
 import planetasImage from '../images/planetas.png'
@@ -11,7 +12,8 @@ import searchBarImage from '../images/search-bar.png'
 function DropDown(props) {
     DropDown.propTypes = {
         pessoasData: PropTypes.shape({
-            count: PropTypes.number.isRequired
+            count: PropTypes.number.isRequired,
+            results: PropTypes.array.isRequired
         }).isRequired,
         planetasData: PropTypes.shape({
             count: PropTypes.number.isRequired
@@ -23,10 +25,16 @@ function DropDown(props) {
             count: PropTypes.number.isRequired
         }).isRequired
     }
+    
 
     const DropDownButtons = document.querySelectorAll('.DropDown-button')
     const [ infoTitle, setInfoTitle ] = useState(null)
     const DropDownActive = document.querySelector('.DropDown-active')
+    let myData = props.pessoasData.results
+    useEffect(() => {
+        myData
+    }, [myData])
+    
 
     function handleClick(event) {
         const target = event.currentTarget
@@ -42,7 +50,7 @@ function DropDown(props) {
     }
 
 
-
+    
     return (
         <div>
             <div className="DropDown-container">
@@ -83,6 +91,44 @@ function DropDown(props) {
                 <div className="DropDown-active-top">
                     <span>{ infoTitle }</span>
                     <img src={ searchBarImage } alt="" />
+                </div>
+
+                <hr />
+
+                <div className="DropDown-table">
+                    <div>
+                        <span className="table-title">Nome</span>
+                    </div>
+
+                    <div>
+                        <span className="table-title">Altura</span>
+                    </div>
+
+                    <div>
+                        <span className="table-title">Ano de Nascimento</span>
+                    </div>
+
+                    <div>
+                        <span className="table-title">Criado em</span>
+                    </div>
+
+                    <div>
+                        <span className="table-title">Editado</span>
+                    </div>
+                </div>
+                <hr className="DropDown-table-hr"/>
+                <div className="DropDown-table-results">
+                    <div>
+                        {myData === undefined ? console.log('not nice') : 
+                        myData.filter((value) => {
+                            if(myData !== undefined) return value
+                            return console.log('not working')
+                        })
+                        .map((item) => ( 
+                            <TableInfo key={ item.name } names={item.name} height={item.height} birthyear={item.birth_year} created={item.created} edited={item.edited}/>
+                        ))
+                        } 
+                    </div>
                 </div>
             </div>
         </div>

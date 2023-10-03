@@ -64,15 +64,16 @@
 .DropDown-active {
     display: none;
     margin: 2em 0;
-    padding: 0.5em 2em;
+    padding: 0.5em 0;
 
-    color: var(--DropDown-title-color);
+    color: var(--DropDown-info-title-color);
     font-size: 16px;
     font-weight: var(--font-regular);
     background-color: var(--neutral-light-color);
 }
 
 .DropDown-active-top {
+    padding: 0 2em;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -81,3 +82,33 @@
 .DropDown-active-top img {
     width: clamp( 208px, 208px, 208px);
 }
+
+hr {
+    margin: 0.5em 0;
+    padding: 1px;
+
+    border-style: none;
+    background-color: var(--hr-color);
+    border-color: var(--hr-color);
+}
+
+.DropDown-table {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 1em;
+
+    margin: 1em 50px 0 50px;
+    padding: 1em 0;
+
+    background-color: var(--DropDown-info-title-background-color);
+    color: var(--DropDown-info-title-color);
+    font-size: 14px;
+    font-weight: var(--font-medium);
+}
+
+
+.DropDown-table-hr {
+    margin: 0 50px;
+}
+
+

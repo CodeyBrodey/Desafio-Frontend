@@ -14,6 +14,9 @@
   --DropDown-planetas-color: #8889b983;
   --DropDown-especies-color: #f1bb1963;
   --DropDown-naves-color: #0cc4b54d;
+  --DropDown-info-title-color: rgba(0, 0, 0, 0.65);
+  --Dropdown-info-title-background-color: #FAFAFA;
+  --hr-color: #E9E9E9;
 
   /* font */
   --font-regular: 400;
