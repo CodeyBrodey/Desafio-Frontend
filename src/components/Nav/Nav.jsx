@@ -1,10 +1,11 @@
 import './Nav.css'
+import logo from '../images/logo.webp'
 
 function Nav() {
 
     return (
         <nav>
-            <img className="nav-logo" src="/src/images/logo.webp" alt="" />
+            <img className="nav-logo" src={logo} alt="" />
             <ul className="nav-options">
                 <li>
                     <a className='nav-options-container' href="">
