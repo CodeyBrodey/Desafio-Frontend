@@ -1,13 +1,13 @@
-import './PlanetInfo.css'
+import './SpeciesInfo.css'
 
-function PlanetInfo(props) {
+function SpeciesInfo(props) {
 
     return (
         <>
-            <div className='PlanetInfo-entries'>
+            <div className='SpeciesInfo-entries'>
                 <span>{props.names}</span>
-                <span>{props.population}</span>
-                <span>{props.climate}</span>
+                <span>{props.classification}</span>
+                <span>{props.designation}</span>
                 <span>{props.created}</span>
                 <span>{props.edited}</span>
             </div>
@@ -16,4 +16,4 @@ function PlanetInfo(props) {
     )
 }
 
-export default PlanetInfo
+export default SpeciesInfo

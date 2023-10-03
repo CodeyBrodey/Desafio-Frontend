@@ -2,6 +2,7 @@ import { useState } from "react"
 import "./DropDown.css"
 import PeopleInfo from "../PeopleInfo/PeopleInfo"
 import PlanetInfo from "../PlanetInfo/PlanetInfo"
+import SpeciesInfo from "../SpeciesInfo/SpeciesInfo"
 import PropTypes from 'prop-types'
 import pessoasImage from '../images/pessoas.png'
 import planetasImage from '../images/planetas.png'
@@ -35,6 +36,7 @@ function DropDown(props) {
     const DropDownActive = document.querySelector('.DropDown-active')
     let myPeopleData = props.pessoasData.results
     let myPlanetData = props.planetasData.results
+    let mySpeciesData = props.especiesData.results
 
     const DropDownTableInfo = [
        {Pessoas: ['Nome', 'Altura', 'Ano de Nascimento', 'Criado em', 'Editado em']},
@@ -43,7 +45,7 @@ function DropDown(props) {
        {Naves: ['Nome', 'Modelo', 'Fabricante', 'Velocidade', 'Valor em créditos']}
     ]
     
-    console.log(myPlanetData)
+    console.log(mySpeciesData)
     
 
     function handleClick(event) {
@@ -138,7 +140,7 @@ function DropDown(props) {
                         )) : console.log('not nice')
                         } 
 
-                        {myPlanetData !== undefined && infoTitle === 'Pessoas' ? 
+                        {myPlanetData !== undefined && infoTitle === 'Planetas' ? 
                         myPlanetData.filter((value) => {
                             if(myPlanetData !== undefined) return value
                             return console.log('not working')
@@ -147,17 +149,17 @@ function DropDown(props) {
                             <PlanetInfo key={ item.name } names={item.name} population={item.population} climate={item.climate} created={item.created} edited={item.edited}/>
                         )) : console.log('not nice')
                         } 
-                        {/*
-                        {myData !== undefined && infoTitle === 'Pessoas' ? 
-                        myData.filter((value) => {
-                            if(myData !== undefined) return value
+                        
+                        {mySpeciesData !== undefined && infoTitle === 'Espécies' ? 
+                        mySpeciesData.filter((value) => {
+                            if(mySpeciesData !== undefined) return value
                             return console.log('not working')
                         })
                         .map((item) => ( 
-                            <TableInfo key={ item.name } names={item.name} height={item.height} birthyear={item.birth_year} created={item.created} edited={item.edited}/>
+                            <SpeciesInfo key={ item.name } names={item.name} classification={item.classification} designation={item.designation} created={item.created} edited={item.edited}/>
                         )) : console.log('not nice')
                         } 
-
+                        {/*
                         {myData !== undefined && infoTitle === 'Pessoas' ? 
                         myData.filter((value) => {
                             if(myData !== undefined) return value

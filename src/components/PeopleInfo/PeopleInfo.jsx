@@ -8,7 +8,7 @@ function PeopleInfo(props) {
                 <span>{props.names}</span>
                 <span>{props.height}</span>
                 <span>{props.birthyear}</span>
-                <span>{props.height}</span>
+                <span>{props.created}</span>
                 <span>{props.edited}</span>
             </div>
             <hr className='DropDown-table-hr'/>
