@@ -2,6 +2,10 @@ import './Dashboard.css'
 import Filmes from '../Filmes/Filmes'
 import DropDown from '../DropDown/DropDown'
 import { useState, useEffect } from 'react'
+import pesquisarImage from '../images/pesquisar.png'
+import notificacaoImage from '../images/notificacao.png'
+import userImage from '../images/user.png'
+
 
 function Dashboard() {
     let [pessoasData, setPessoasData] = useState([])
@@ -36,12 +40,12 @@ function Dashboard() {
                 <h1>Olá, User</h1>
 
                 <div className='main-options'>
-                    <img className='icon' src="/src/images/pesquisar.png" alt="" />
+                    <img className='icon' src={ pesquisarImage } alt="" />
                     <div className="icon--notification">
-                        <img className='icon' src="/src/images/notificacao.png" alt="" />
+                        <img className='icon' src={ notificacaoImage } alt="" />
                     </div>
                     <div className='main-user'>
-                        <img className='icon' src="/src/images/user.png" alt="" />
+                        <img className='icon' src={ userImage } alt="" />
                         User
                     </div>
                 </div>

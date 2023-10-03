@@ -1,6 +1,12 @@
 import { useState } from "react"
 import "./DropDown.css"
 import PropTypes from 'prop-types'
+import pessoasImage from '../images/pessoas.png'
+import planetasImage from '../images/planetas.png'
+import especiesImage from '../images/especies.png'
+import navesImage from '../images/naves.png'
+import searchBarImage from '../images/search-bar.png'
+
 
 function DropDown(props) {
     DropDown.propTypes = {
@@ -43,28 +49,31 @@ function DropDown(props) {
                 <button className="DropDown-button DropDown-pessoas not-active" onClick={ handleClick }>
                     <p className="DropDown-title">Pessoas</p>
                     <div className="DropDown-info">
-                        <img src="/src/images/pessoas.png" alt="" />
+                        <img src={ pessoasImage } alt="" />
                         <span>{ props.pessoasData.count }</span>
                     </div>
                 </button>
+
                 <button className="DropDown-button DropDown-planetas not-active" onClick={ handleClick }>
                     <p className="DropDown-title">Planetas</p>
                     <div className="DropDown-info">
-                        <img src="/src/images/planetas.png" alt="" />
+                        <img src={ planetasImage } alt="" />
                         <span>{ props.planetasData.count }</span>
                     </div>
                 </button>
+
                 <button className="DropDown-button DropDown-especies not-active" onClick={ handleClick }>
                     <p className="DropDown-title">Espécies</p>
                     <div className="DropDown-info">
-                        <img src="/src/images/especies.png" alt="" />
+                        <img src={ especiesImage } alt="" />
                         <span>{ props.especiesData.count }</span>
                     </div>
                 </button>
+
                 <button className="DropDown-button DropDown-naves not-active" onClick={ handleClick }>
                     <p className="DropDown-title">Naves</p>
                     <div className="DropDown-info">
-                        <img src="/src/images/naves.png" alt="" />
+                        <img src={ navesImage } alt="" />
                         <span>{ props.navesData.count }</span>
                     </div>
                 </button>
@@ -73,7 +82,7 @@ function DropDown(props) {
             <div className="DropDown-active">
                 <div className="DropDown-active-top">
                     <span>{ infoTitle }</span>
-                    <img src="/src/images/search-bar.png" alt="" />
+                    <img src={ searchBarImage } alt="" />
                 </div>
             </div>
         </div>
