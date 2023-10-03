@@ -1,5 +1,5 @@
 import './Nav.css'
-import dashboardImg from './src/images/dashboard.png'
+import dashboardImg from '/Users/User/Documents/Programming/GitHub/Desafio-Frontend/src/images/dashboard.png'
 
 function Nav() {
 
