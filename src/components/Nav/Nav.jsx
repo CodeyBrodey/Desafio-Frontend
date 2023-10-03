@@ -1,5 +1,6 @@
 import './Nav.css'
 import dashboardImg from '/Users/User/Documents/Programming/GitHub/Desafio-Frontend/src/images/dashboard.png'
+import ajustesImg from '../../images/ajustes.png'
 
 function Nav() {
 
@@ -16,7 +17,7 @@ function Nav() {
 
                 <li>
                     <a className='nav-options-container' href="">
-                        <img className="icon" src="/src/images/ajustes.png" alt="" />
+                        <img className="icon" src={ajustesImg} alt="" />
                         Ajustes
                     </a>
                 </li>
