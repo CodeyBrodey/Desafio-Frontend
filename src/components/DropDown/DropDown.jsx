@@ -3,6 +3,7 @@ import "./DropDown.css"
 import PeopleInfo from "../PeopleInfo/PeopleInfo"
 import PlanetInfo from "../PlanetInfo/PlanetInfo"
 import SpeciesInfo from "../SpeciesInfo/SpeciesInfo"
+import StarShipInfo from "../StarShipInfo/StarShipInfo"
 import PropTypes from 'prop-types'
 import pessoasImage from '../images/pessoas.png'
 import planetasImage from '../images/planetas.png'
@@ -37,6 +38,7 @@ function DropDown(props) {
     let myPeopleData = props.pessoasData.results
     let myPlanetData = props.planetasData.results
     let mySpeciesData = props.especiesData.results
+    let myStarShipData = props.navesData.results
 
     const DropDownTableInfo = [
        {Pessoas: ['Nome', 'Altura', 'Ano de Nascimento', 'Criado em', 'Editado em']},
@@ -45,7 +47,7 @@ function DropDown(props) {
        {Naves: ['Nome', 'Modelo', 'Fabricante', 'Velocidade', 'Valor em créditos']}
     ]
     
-    console.log(mySpeciesData)
+    console.log(myStarShipData)
     
 
     function handleClick(event) {
@@ -159,16 +161,16 @@ function DropDown(props) {
                             <SpeciesInfo key={ item.name } names={item.name} classification={item.classification} designation={item.designation} created={item.created} edited={item.edited}/>
                         )) : console.log('not nice')
                         } 
-                        {/*
-                        {myData !== undefined && infoTitle === 'Pessoas' ? 
-                        myData.filter((value) => {
-                            if(myData !== undefined) return value
+                        
+                        {myStarShipData !== undefined && infoTitle === 'Naves' ? 
+                        myStarShipData.filter((value) => {
+                            if(myStarShipData !== undefined) return value
                             return console.log('not working')
                         })
                         .map((item) => ( 
-                            <TableInfo key={ item.name } names={item.name} height={item.height} birthyear={item.birth_year} created={item.created} edited={item.edited}/>
+                            <StarShipInfo key={ item.name } names={item.name} model={item.model} manufacturer={item.manufacturer} created={item.created} edited={item.edited}/>
                         )) : console.log('not nice')
-                        }  */}
+                        }
                     </div>
                 </div>
             </div>
